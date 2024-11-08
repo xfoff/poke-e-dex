@@ -1,0 +1,31 @@
+.main {
+  padding-top: 25px;
+}
+
+.main input {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cards {
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 10 equal-width columns */
+  gap: 7px;
+  height: inherit;
+  width: 742px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 9px;
+  border: 1px solid black;
+  cursor: pointer;
+}
