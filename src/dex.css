@@ -2,6 +2,22 @@
   padding-top: 25px;
 }
 
+.details {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  border-radius: 30px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+}
+
 .search {
   position: absolute;
   top: 12px;
@@ -57,7 +73,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 0.55em;
+  font-size: 9px;
   text-align: center;
   align-items: center;
   cursor: pointer;
@@ -67,7 +83,12 @@
   border-radius: 15px;
   transition: transform 0.1s;
   perspective: 1000px;
-  background: rgba(157, 153, 138, 0.89);
+  background-color: rgba(157, 153, 138, 0.89);
+  transition: background-color 0.2s;
+}
+
+.card:hover {
+  background-color: rgba(137, 133, 118, 1);
 }
 
 .card p {
