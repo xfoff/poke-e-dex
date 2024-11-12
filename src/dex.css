@@ -33,6 +33,12 @@
   image-rendering: pixelated;
   border: 2px solid #40453b;
   border-radius: 25px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .types {
