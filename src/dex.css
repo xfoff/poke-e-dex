@@ -4,8 +4,7 @@
 
 .details {
   position: absolute;
-  width: 38%;
-  height: 65%;
+  width: 296px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -15,34 +14,19 @@
   font-size: 13px;
 }
 
+.details img {
+  font-size: 11px;
+}
+
+.mainData {
+  display: flex;
+}
+
 .pokeName {
-  position: absolute;
-  top: 10px;
-  left: 120px;
+  margin-left: 10px;
 }
 
-.pokeName p {
-  font-size: 13px;
-  background-color: #B8B4A2;
-  border: 2px solid #40453b;
-  padding: 2px;
-  border-radius: 5px;
-  margin-top: 2px;
-  margin-bottom: 9px;
-  word-wrap: break-word;
-  overflow-y: auto;
-  width: 125px;
-  height: 24px;
-}
-
-.pokeName div, .someDiv{
-  background-color: #B8B4A2;
-  border: 2px solid #40453b;
-  border-radius: 5px;
-  margin-top: 2px;
-}
-
-.images .img {
+.img {
   background-image: url("/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,38 +35,69 @@
   border-radius: 25px;
 }
 
-.typeWrapper {
-  position: absolute;
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2px;
+}
+
+.box {
+  background-color: #b8b4a2;
+  border: 2px solid #40453b;
+  border-radius: 5px;
+  padding: 3px 3px 3px 0px;
+  width: fit-content;
+}
+
+.box img {
+  margin-left: 3px;
+}
+
+.relatedTypes {
+  display: flex;
+  font-size: 11px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.weak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-wrap: nowrap;
+  font-size: 10px;
 }
 
 .typeContainer {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 5px;
-  background-color: #B8B4A2;
-  border: 2px solid #40453b;
-  border-radius: 10px;
+  align-items: center;
   margin-top: 3px;
+  padding: 0px 3px 3px 0px;
 }
 
 .typeContainer img {
-  font-size: 9px;
   margin-top: 3px;
-  max-width: 48px;
-  text-align: center;
+  font-size: 9px;
 }
 
-.pokeStats {
-  position: absolute;
-  top: 285px;
+.stats {
+  font-size: 11px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statData {
+  padding-left: 3px;
+  margin-top: 2px;
+  list-style-position: inside;
 }
 
 .help {
   position: absolute;
-  background-color: #907D5F;
+  background-color: #a49c79;
   width: 328px;
   top: 45px;
   left: 50%;
@@ -100,7 +115,7 @@
 }
 
 .help b {
-  color: rgb(95, 255, 100);
+  color: rgb(125, 255, 20);
 }
 
 .help a {

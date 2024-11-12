@@ -127,50 +127,54 @@ const Dex: React.FC = () => {
       </div>
       {Object.keys(detailedPokeData).length != 0 ? (
           <div className="details" style={{display: details ? 'block' : 'none'}}>
-            <div className="images">
+            <div className="mainData">
               <img className="img" src={detailedPokeData.sprites.front_default} draggable="false"/>
               <div className="pokeName">
-                <span>Name: </span>
-                <p>{detailedPokeData.name}</p>
-                <span>
-                  Types:
-                  <div style={{display: 'flex', justifyContent: 'space-around', padding: '4px'}}>
-                    {evenMoreDetailedPokeData[0].map((type:any, index:number) => (
-                      <img style={{fontSize: '11px'}} key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
+                <p>Name:</p>
+                <p style={{paddingLeft: '3px'}} className="box">{detailedPokeData.name}</p>
+                <p style={{marginTop: '15px'}}>Types:</p>
+                <div className="types box">
+                  {evenMoreDetailedPokeData[0].map((type:any, index:number) => (
+                    <img key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relatedTypes">
+              {evenMoreDetailedPokeData[1].length != 0 && (
+                <div className="weak">
+                  <p>Weak against</p>
+                  <div className="typeContainer box">
+                    {evenMoreDetailedPokeData[1].map((type:any, index:number) => (
+                      <img key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
                     ))}
                   </div>
-                </span>
-              </div>
-              <div className="typeWrapper" style={{left: '10px'}}>
-                <p style={{fontSize: '10px', marginTop: '5px'}}>Weak against:</p>
-                <div className="typeContainer">
-                  {evenMoreDetailedPokeData[1].map((type:any, index:number) => (
-                    <img key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
-                  ))}
                 </div>
-              </div>
-              <div className="typeWrapper" style={{left: '150px'}}>
-                <p style={{fontSize: '10px', marginTop: '5px', textWrap: 'nowrap'}}>Strong against:</p>
-                <div className="typeContainer">
-                  {evenMoreDetailedPokeData[2].map((type:any, index:number) => (
-                    <img key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
-                  ))}
+              )}
+              {evenMoreDetailedPokeData[2].length != 0 && (
+                <div className="weak">
+                  <p>Strong against</p>
+                  <div className="typeContainer box">
+                    {evenMoreDetailedPokeData[2].map((type:any, index:number) => (
+                      <img key={index} src={type.sprites['generation-iv']['diamond-pearl'].name_icon} alt={type.name} draggable="false"/>
+                    ))}
+                  </div>
                 </div>
+              )}
+            </div>
+            <div className="stats">
+              <p>Stats</p>
+              <div className="statData box">
+                {detailedPokeData.stats.map((stat:any, index:number) => (
+                  <p key={index}>{stat.stat.name}: <span style={{color: 'green'}}>{stat.base_stat}</span></p>
+                ))}
               </div>
-              <div style={{fontSize: '10px'}} className="pokeStats">Stats:
-                <div className="someDiv" style={{padding: '5px'}}>
-                  {detailedPokeData.stats.map((stat:any, index:number) => (
-                    <div key={index}><span>{stat.stat.name}</span>: <span style={{color: 'green'}}>{stat.base_stat}</span></div>
-                  ))}
-                </div>
-              </div>
-              <div style={{fontSize: '10px', top:'395px'}} className="pokeStats">Abilities:
-                <div className="someDiv" style={{padding: '5px'}}>
-                  {detailedPokeData.abilities.map((ability:any, index:number) => (
-                    <div key={index}><span>{ability.ability.name}</span></div>
-                  ))}
-                </div>
-              </div>
+              <p style={{marginTop: '10px'}}>Abilities</p>
+              <ol className="statData box">
+                {detailedPokeData.abilities.map((ability:any, index:number) => (
+                  <li key={index}>{ability.ability.name}</li>
+                ))}
+              </ol>
             </div>
             <button className="close" onClick={() => setDetails(!details)}><p>X</p></button>
           </div>
